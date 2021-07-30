@@ -1,0 +1,190 @@
+.banner {
+  background: fixed url(https://hexschool.github.io/webLayoutTraining1st/week3/banner.png)  center center / cover  no-repeat;
+  height: 840px;
+  @include breakpoint($sm) {
+    height: 394px;
+  }
+}
+
+
+
+.index-section {
+  padding-top: $spacer * 15;
+  padding-bottom: $spacer * 20;
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: $spacer * 10;
+    @include breakpoint($md) {    
+      font-size: 2rem;
+      margin-bottom: $spacer * 8;
+    }
+    @include breakpoint($sm) {
+      font-size: 1.5rem;
+      line-height: 2;
+      margin-bottom: $spacer * 5;
+    }
+    &-sub {
+      @include breakpoint($sm) {
+        font-size: 1.25rem;
+        line-height: 2.4;
+      }
+    }
+  }
+}
+
+.index-feature {
+  margin-bottom: -$spacer * 8;
+  &-card {
+    width:25%;
+    @include breakpoint($md) {
+      margin-bottom: $spacer * 8;
+      width: 50%;
+    }
+    @include breakpoint($sm) {
+      width: 100%;
+    }
+    span {
+      font-size: 100px;
+      color: $primary-dark;
+      margin-bottom: $spacer * 2;
+    }
+    &-title {
+      color: $primary-dark;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: $spacer * 2;
+    }
+    p {
+      max-width: 255px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.classic__card {
+  position: relative;
+  &-title {
+    font-size: 3rem;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 72px;
+    color: $primary;
+    @include breakpoint($md) {
+      font-size: 1.75rem;
+    }
+    @include breakpoint($sm) {
+      @include positionCenter;
+    }
+    // @include breakpoint($sm) {
+    
+    // }
+
+  }
+
+}
+
+
+
+.icon-optical {
+  &::before {
+    @include MaterialIconBefore ("auto_awesome", $padding-right: 8px);
+  }
+}
+.icon-sunglasses {
+  &::before {
+    @include MaterialIconBefore ("light_mode", $padding-right: 8px);
+  }
+}
+
+.icon-functional {
+  &::before {
+    @include MaterialIconBefore ("flash_on", $padding-right: 8px);
+  }
+
+}
+
+.collaboration {
+  background: fixed url(https://hexschool.github.io/webLayoutTraining1st/week3/bg.png)  center / cover no-repeat;
+  
+}
+
+
+
+.link-white-off {
+  position: relative;
+  &::after {
+    background-color: $white ;
+    background-clip: content-box;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+    transition: all 0.5s;
+
+  }
+  &:hover::after {
+    opacity:0;
+  }
+}
+
+.feedback-card {
+  @include radiusRound;
+  box-shadow: 0px 2px 6px #00000029;
+  &__image {
+    // 沒有加width這行圖會怪怪的（firefox
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+  &__info {
+    padding: $spacer * 4;
+    border: 0 1px 1px 1px solid #DEE2E6;
+    border-radius: 0 0 4px 4px;
+    &-name {
+      font-size: $font-size-small;
+      font-weight: 500;
+    }
+    &-comment {
+      height: $font-size-base * $line-height-base * 3;
+      margin-bottom: $spacer * 13;
+    }
+    &-time {
+      font-size: $font-size-small;
+      color: #707070;
+    }
+  }
+}
+
+.contact-us {
+  &__label {
+
+    margin-bottom: $spacer;
+    &-agreement {
+      margin-bottom: $spacer * 10;
+      @include breakpoint($md) {
+        margin-bottom: $spacer * 5;
+      }
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+
+    margin-bottom: $spacer * 2;
+    @include breakpoint($md) {
+      margin-bottom: $spacer * 2;
+    }
+    &-comment {
+      padding-bottom: $spacer * 17;
+    }
+  }
+
+  &__button {
+    display: block;
+  }
+}
